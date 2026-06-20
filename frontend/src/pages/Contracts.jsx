@@ -2,9 +2,43 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { api } from '../api/client'
 import { toast } from 'react-toastify'
-import { FiFileText, FiCheck, FiX, FiMessageSquare, FiBell } from 'react-icons/fi'
+import { FiFileText, FiCheck, FiX, FiMessageSquare, FiBell, FiCalendar } from 'react-icons/fi'
 import Navbar from '../components/Navbar'
 import { useAuth } from '../context/AuthContext'
+
+const ACCEPTED_STATUSES = ['accepted', 'signed', 'active', 'paid', 'completed']
+
+const getAcceptedAt = (contract) => {
+  if (!contract) return null
+  if (contract.acceptedAt) return contract.acceptedAt
+  if (contract.contractDocument?.generatedAt) return contract.contractDocument.generatedAt
+  const status = (contract.status || '').toString().toLowerCase()
+  if (ACCEPTED_STATUSES.includes(status)) return contract.updatedAt || contract.createdAt
+  return null
+}
+
+const formatAcceptedLabel = (dateStr) => {
+  if (!dateStr) return null
+  const d = new Date(dateStr)
+  if (Number.isNaN(d.getTime())) return null
+
+  const now = new Date()
+  const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate())
+  const startOfDate = new Date(d.getFullYear(), d.getMonth(), d.getDate())
+  const diffDays = Math.round((startOfToday - startOfDate) / (86400000))
+
+  const datePart = d.toLocaleDateString('en-IN', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric'
+  })
+
+  if (diffDays === 0) return `Today, ${datePart}`
+  if (diffDays === 1) return `Yesterday, ${datePart}`
+
+  const dayPart = d.toLocaleDateString('en-IN', { weekday: 'long' })
+  return `${dayPart}, ${datePart}`
+}
 
 const Contracts = () => {
   const { user, token } = useAuth()
@@ -288,6 +322,7 @@ const Contracts = () => {
               return orderedContracts.map((contract) => {
                 const sLocal = (contract.status || '').toLowerCase()
                 const label = getComputedStatus(contract)
+                const acceptedLabel = formatAcceptedLabel(getAcceptedAt(contract))
                 return (
               <div key={contract._id} className="card">
                 <div className="flex justify-between items-start mb-4">
@@ -346,7 +381,7 @@ const Contracts = () => {
                 )}
 
                 <div className="mt-4 pt-4 border-t">
-                  <div className="flex gap-3">
+                  <div className="flex flex-wrap items-center gap-3">
                     <Link
                       to={`/contracts/${contract._id}`}
                       className="btn-secondary"
@@ -384,6 +419,17 @@ const Contracts = () => {
                           Give Review
                         </button>
                       )
+                    )}
+                    {acceptedLabel && (
+                      <span
+                        className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-50 text-blue-800 text-sm border border-blue-100"
+                        title="Contract acceptance date"
+                      >
+                        <FiCalendar className="shrink-0" />
+                        <span>
+                          <span className="font-medium">Accepted:</span> {acceptedLabel}
+                        </span>
+                      </span>
                     )}
                     {(unread[contract._id] > 0) && (
                       <div className="relative inline-flex items-center">

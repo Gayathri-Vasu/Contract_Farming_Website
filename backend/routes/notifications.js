@@ -275,7 +275,8 @@ router.put('/:id/accept-request', async (req, res) => {
             startDate: new Date(),
             endDate: deliveryDate
           },
-          status: 'accepted'
+          status: 'accepted',
+          acceptedAt: new Date()
         });
 
         acceptedContractId = contract._id;
@@ -344,6 +345,7 @@ router.put('/:id/accept-request', async (req, res) => {
             endDate: base.deliveryDate || new Date()
           },
           status: 'accepted',
+          acceptedAt: new Date(),
           messages: [],
           payments: []
         });

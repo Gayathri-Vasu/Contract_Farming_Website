@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Frontend for Assured Contract Farming System",
   "private": true,
+  "type": "module",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

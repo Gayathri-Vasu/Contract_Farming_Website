@@ -81,6 +81,10 @@ const contractSchema = new mongoose.Schema({
     enum: ['pending', 'accepted', 'rejected', 'active', 'paid', 'signed', 'completed', 'cancelled'],
     default: 'pending'
   },
+  acceptedAt: {
+    type: Date,
+    default: null
+  },
   // Messages array for real-time communication
   messages: [{
     senderId: {

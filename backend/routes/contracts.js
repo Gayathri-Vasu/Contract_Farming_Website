@@ -1240,6 +1240,7 @@ router.put('/:id/accept', protect, async (req, res) => {
 
 
     contract.status = 'accepted';
+    contract.acceptedAt = new Date();
     if (!contract.contractId) {
       contract.contractId = generateContractId();
     }
@@ -2171,6 +2172,7 @@ router.put('/:id/accept', protect, async (req, res) => {
 
 
     contract.status = 'accepted';
+    contract.acceptedAt = new Date();
     if (!contract.contractId) {
       contract.contractId = generateContractId();
     }
