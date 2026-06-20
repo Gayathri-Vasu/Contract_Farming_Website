@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { api } from '../api/client'
 import { toast } from 'react-toastify'
 import { FiCheck, FiX, FiFileText, FiUser, FiPackage, FiCalendar, FiDollarSign } from 'react-icons/fi'
-import Navbar from '../components/Navbar'
+import NavBar from '../components/NavBar'
 import { useAuth } from '../context/AuthContext'
 
 const ContractRequests = () => {
@@ -94,7 +94,7 @@ const ContractRequests = () => {
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-50">
-        <Navbar />
+        <NavBar />
         <div className="flex items-center justify-center h-96">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
         </div>
@@ -104,7 +104,7 @@ const ContractRequests = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Navbar />
+      <NavBar />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900">

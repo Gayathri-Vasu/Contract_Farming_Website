@@ -16,7 +16,7 @@ import {
 
 } from 'react-icons/fi'
 
-import Navbar from '../components/Navbar'
+import NavBar from '../components/NavBar'
 
 import { useAuth } from '../context/AuthContext'
 
@@ -283,7 +283,7 @@ const AdminDashboard = () => {
 
       <div className="min-h-screen">
 
-        <Navbar />
+        <NavBar />
 
         <div className="flex items-center justify-center h-96">
 
@@ -303,7 +303,7 @@ const AdminDashboard = () => {
 
     <div className="h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex flex-col">
 
-      <Navbar />
+      <NavBar />
 
       <div className="flex-1 w-full px-4 sm:px-6 lg:px-8 py-8 overflow-auto">
 

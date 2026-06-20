@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 import { FiDollarSign, FiUser, FiCalendar, FiClock } from 'react-icons/fi'
-import Navbar from '../components/Navbar'
+import NavBar from '../components/NavBar'
 import { useAuth } from '../context/AuthContext'
 
 /**
@@ -47,7 +47,7 @@ const Payments = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Navbar />
+      <NavBar />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900">Payment History</h1>

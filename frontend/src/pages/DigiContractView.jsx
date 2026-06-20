@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import axios from 'axios'
 import html2pdf from 'html2pdf.js'
-import Navbar from '../components/Navbar'
+import NavBar from '../components/NavBar'
 
 export default function DigiContractView() {
   const { id } = useParams()
@@ -38,7 +38,7 @@ export default function DigiContractView() {
   if (loading) {
     return (
       <div className="min-h-screen">
-        <Navbar />
+        <NavBar />
         <div className="flex items-center justify-center h-96">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-700"></div>
         </div>
@@ -49,7 +49,7 @@ export default function DigiContractView() {
   if (!doc) {
     return (
       <div className="min-h-screen bg-gray-50">
-        <Navbar />
+        <NavBar />
         <div className="max-w-3xl mx-auto px-4 py-10">
           <div className="bg-white p-6 rounded-lg shadow text-center">
             <p className="text-gray-700">DigiContract not found.</p>
@@ -81,7 +81,7 @@ export default function DigiContractView() {
 
   return (
     <div className="bg-green-100 min-h-screen">
-      <Navbar />
+      <NavBar />
       <div className="max-w-4xl mx-auto p-6 sm:p-10">
         <div className="mb-4 flex items-center justify-between">
           <Link to="/digi-contracts" className="text-green-700 underline">

@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { useAuth } from '../context/AuthContext'
 import { toast } from 'react-toastify'
-import Navbar from '../components/Navbar'
+import NavBar from '../components/NavBar'
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -196,7 +196,7 @@ const Register = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-50 to-green-100">
-      <Navbar />
+      <NavBar />
       <div className="flex items-center justify-center py-12 px-4">
         <div className="card max-w-2xl w-full">
           <div className="flex flex-col items-center mb-4">

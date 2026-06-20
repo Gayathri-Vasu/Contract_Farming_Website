@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import Navbar from '../components/Navbar'
+import NavBar from '../components/NavBar'
 import { useAuth } from '../context/AuthContext'
 
 const statusLabel = (raw) => {
@@ -71,7 +71,7 @@ export default function DigiContractList() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Navbar />
+      <NavBar />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex items-center justify-between mb-6">
           <h1 className="text-2xl font-bold text-gray-900">Digi Contracts</h1>

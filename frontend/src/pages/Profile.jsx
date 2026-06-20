@@ -6,7 +6,7 @@ import { toast } from 'react-toastify'
 
 import { FiEdit2, FiCheck } from 'react-icons/fi'
 
-import Navbar from '../components/Navbar'
+import NavBar from '../components/NavBar'
 
 import { useAuth } from '../context/AuthContext'
 
@@ -182,7 +182,7 @@ const Profile = () => {
 
       <div className="min-h-screen">
 
-        <Navbar />
+        <NavBar />
 
         <div className="flex items-center justify-center h-96">
 
@@ -202,7 +202,7 @@ const Profile = () => {
 
     <div className="min-h-screen bg-gray-50">
 
-      <Navbar />
+      <NavBar />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 

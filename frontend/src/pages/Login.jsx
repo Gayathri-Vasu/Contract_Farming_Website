@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { toast } from 'react-toastify'
-import navBar from '../components/navBar'
+import NavBar from '../components/NavBar'
 import axios from 'axios'
 import { api } from '../api/client'
 
@@ -77,7 +77,7 @@ const Login = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-50 to-green-100">
-      <navBar />
+      <NavBar />
       <div className="flex items-center justify-center py-12 px-4">
         <div className="card max-w-md w-full">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-6">

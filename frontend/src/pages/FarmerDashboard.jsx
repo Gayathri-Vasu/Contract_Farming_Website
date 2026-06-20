@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { api } from '../api/client'
 import { toast } from 'react-toastify'
 import { FiPlus, FiPackage, FiFileText, FiDollarSign, FiTrendingUp, FiFeather } from 'react-icons/fi'
-import Navbar from '../components/Navbar'
+import NavBar from '../components/NavBar'
 import { useAuth } from '../context/AuthContext'
 
 const FarmerDashboard = () => {
@@ -70,7 +70,7 @@ const FarmerDashboard = () => {
   if (loading) {
     return (
       <div className="min-h-screen">
-        <Navbar />
+        <NavBar />
         <div className="flex items-center justify-center h-96">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
         </div>
@@ -80,7 +80,7 @@ const FarmerDashboard = () => {
 
   return (
     <div className="h-screen bg-green-50 flex flex-col">
-      <Navbar />
+      <NavBar />
       <div className="flex-1 w-full px-4 sm:px-6 lg:px-8 py-8 overflow-auto">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-green-900">Farmer Dashboard</h1>

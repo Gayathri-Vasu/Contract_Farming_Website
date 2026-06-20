@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { toast } from 'react-toastify'
-import Navbar from '../components/Navbar'
+import NavBar from '../components/NavBar'
 
 const CropForm = () => {
   const { id } = useParams()
@@ -107,7 +107,7 @@ const CropForm = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Navbar />
+      <NavBar />
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="card">
           <h1 className="text-3xl font-bold text-gray-900 mb-6">

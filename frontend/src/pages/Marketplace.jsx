@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 import { FiSearch, FiPackage } from 'react-icons/fi'
-import Navbar from '../components/Navbar'
+import NavBar from '../components/NavBar'
 import { useAuth } from '../context/AuthContext'
 import { MARKET_CROPS } from '../constants/marketCrops'
 
@@ -119,7 +119,7 @@ const Marketplace = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Navbar />
+      <NavBar />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Crop Marketplace</h1>

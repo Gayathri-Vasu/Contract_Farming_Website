@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { toast } from 'react-toastify'
-import Navbar from '../components/Navbar'
+import NavBar from '../components/NavBar'
 import { useAuth } from '../context/AuthContext'
 
 const toTitleCase = (str = '') =>
@@ -130,7 +130,7 @@ const FarmerCircle = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Navbar />
+      <NavBar />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <header className="mb-8 text-center">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Farmer Circle</h1>

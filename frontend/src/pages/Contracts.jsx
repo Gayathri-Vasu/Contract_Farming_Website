@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { api } from '../api/client'
 import { toast } from 'react-toastify'
 import { FiFileText, FiCheck, FiX, FiMessageSquare, FiBell, FiCalendar } from 'react-icons/fi'
-import Navbar from '../components/Navbar'
+import NavBar from '../components/NavBar'
 import { useAuth } from '../context/AuthContext'
 
 const ACCEPTED_STATUSES = ['accepted', 'signed', 'active', 'paid', 'completed']
@@ -273,7 +273,7 @@ const Contracts = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Navbar />
+      <NavBar />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8 flex justify-between items-center">
           <div>

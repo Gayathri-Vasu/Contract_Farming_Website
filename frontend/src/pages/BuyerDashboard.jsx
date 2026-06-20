@@ -8,7 +8,7 @@ import { toast } from 'react-toastify'
 
 import { FiShoppingCart, FiFileText, FiDollarSign, FiTrendingUp, FiPlus, FiSmile } from 'react-icons/fi'
 
-import Navbar from '../components/Navbar'
+import NavBar from '../components/NavBar'
 import { useAuth } from '../context/AuthContext'
 // DigiContracts table intentionally not rendered on dashboard
 
@@ -303,7 +303,7 @@ const BuyerDashboard = () => {
 
       <div className="min-h-screen">
 
-        <Navbar />
+        <NavBar />
 
         <div className="flex items-center justify-center h-96">
 
@@ -323,7 +323,7 @@ const BuyerDashboard = () => {
 
     <div className="h-screen bg-green-50 flex flex-col">
 
-      <Navbar />
+      <NavBar />
 
       <div className="flex-1 w-full px-4 sm:px-6 lg:px-8 py-8 overflow-auto">
 

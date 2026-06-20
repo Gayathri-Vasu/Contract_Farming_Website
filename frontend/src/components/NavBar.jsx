@@ -3,7 +3,7 @@ import { useAuth } from '../context/AuthContext'
 import { FiLogOut, FiMenu, FiX } from 'react-icons/fi'
 import { useState } from 'react'
 
-const Navbar = () => {
+const NavBar = () => {
   const { user, logout } = useAuth()
   const navigate = useNavigate()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -169,4 +169,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default NavBar

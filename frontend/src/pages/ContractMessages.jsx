@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react'
 import { useParams, Link, useNavigate, useLocation } from 'react-router-dom'
 import axios from 'axios'
 import { toast } from 'react-toastify'
-import Navbar from '../components/Navbar'
+import NavBar from '../components/NavBar'
 import { useAuth } from '../context/AuthContext'
 import { FiMoreHorizontal, FiPaperclip, FiMic, FiSend } from 'react-icons/fi'
 
@@ -92,7 +92,7 @@ const ContractMessages = () => {
   if (loading) {
     return (
       <div className="min-h-screen">
-        <Navbar />
+        <NavBar />
         <div className="flex items-center justify-center h-96">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
         </div>
@@ -107,7 +107,7 @@ const ContractMessages = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Navbar />
+      <NavBar />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="card mb-4">
           <div className="flex items-center justify-between">
