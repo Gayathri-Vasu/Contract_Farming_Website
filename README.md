@@ -1,4 +1,4 @@
-# S0385 – Assured Contract Farming System for Stable Market Access
+# Assured Contract Farming System for Stable Market Access
 
 A complete full-stack web application that enables assured contract farming by connecting farmers directly with buyers through transparent agreements, stable pricing, and secure payments.
 
@@ -351,22 +351,12 @@ To test the application:
 
 ## 🤝 Contributing
 
-This is a project for S0385 - Smart Agriculture Innovation Program. Contributions are welcome!
+**Assured Contract Farming for Stable Market Access** is my 8th semester project where I built a full-stack platform connecting farmers and buyers directly with real-time communication and structured trading workflows. Through this project, I gained strong knowledge in full-stack development, system design, and building real-world applications focused on solving agricultural market challenges.
+
 
 ## 📄 License
 
 This project is created for educational purposes as part of the Smart Agriculture Innovation Program.
-
-## 👥 Authors
-
-- Project: S0385 – Assured Contract Farming System
-- Developed for: Smart Agriculture Innovation Program
-
-## 📞 Support
-
-For issues and questions, please create an issue in the repository.
-
----
 
 **Built with ❤️ for farmers and buyers**
 
