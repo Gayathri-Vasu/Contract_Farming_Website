@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { FiShield, FiDollarSign, FiTrendingUp, FiUsers, FiCheckCircle } from 'react-icons/fi'
-import Navbar from '../components/Navbar'
+import NavBar from '../components/NavBar'
 
 const Landing = () => {
   const features = [
@@ -38,7 +38,7 @@ const Landing = () => {
 
   return (
     <div className="min-h-screen">
-      <Navbar />
+      <NavBar />
       
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary-50 to-green-100 py-20">
