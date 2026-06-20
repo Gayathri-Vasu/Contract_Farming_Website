@@ -1,8 +1,6 @@
 import { createContext, useState, useEffect, useContext } from 'react'
 
-import axios from 'axios'
-
-import { setAuthToken } from '../api/client'
+import { api, setAuthToken } from '../api/client'
 
 
 
@@ -46,7 +44,7 @@ const AuthProvider = ({ children }) => {
 
     setUser(null)
 
-    delete axios.defaults.headers.common['Authorization']
+    setAuthToken(null)
 
   }
 
@@ -56,11 +54,11 @@ const AuthProvider = ({ children }) => {
 
     if (token) {
 
-      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
+      api.defaults.headers.common.Authorization = `Bearer ${token}`
 
       try {
 
-        const res = await axios.get('/api/auth/me')
+        const res = await api.get('/auth/me')
 
         setUser(res.data.user)
 
@@ -104,7 +102,7 @@ const AuthProvider = ({ children }) => {
 
     try {
 
-      const res = await axios.post('/api/auth/login', { email, password })
+      const res = await api.post('/auth/login', { email, password })
 
       
 
@@ -148,7 +146,7 @@ const AuthProvider = ({ children }) => {
 
       setUser(userData)
 
-      axios.defaults.headers.common['Authorization'] = `Bearer ${newToken}`
+      setAuthToken(newToken)
 
       
 
@@ -212,23 +210,13 @@ const AuthProvider = ({ children }) => {
 
     try {
 
-      const isFormData = userData instanceof FormData
-
-      const config = isFormData
-
-        ? { headers: { 'Content-Type': 'multipart/form-data' } }
-
-        : {}
-
-
-
-      const res = await axios.post('/api/auth/register', userData, config)
+      const res = await api.post('/auth/register', userData)
 
       
 
       // Check if response has the expected structure
 
-      if (!res.data || !res.data.success) {
+      if (!res.data || typeof res.data !== 'object' || !res.data.success) {
 
         return {
 
@@ -266,7 +254,7 @@ const AuthProvider = ({ children }) => {
 
       setUser(newUser)
 
-      axios.defaults.headers.common['Authorization'] = `Bearer ${newToken}`
+      setAuthToken(newToken)
 
       
 

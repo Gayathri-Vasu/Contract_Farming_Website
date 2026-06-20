@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import axios from 'axios'
+import { api } from '../api/client'
 import { useAuth } from '../context/AuthContext'
 import { toast } from 'react-toastify'
 import NavBar from '../components/NavBar'
@@ -53,7 +53,7 @@ const Register = () => {
   useEffect(() => {
     const fetchSuggestions = async () => {
       try {
-        const res = await axios.get('/api/suggestions/register')
+        const res = await api.get('/suggestions/register')
         if (res.data?.success && res.data.data) {
           setSuggestions(prev => ({
             ...prev,
